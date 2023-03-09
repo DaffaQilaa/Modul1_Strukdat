@@ -7,6 +7,8 @@ public class Kota<E> {
         element = kota;
     }
 
+
+
     public E getElement() {
         return element;
     }
