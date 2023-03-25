@@ -12,12 +12,12 @@ public class Main2 {
         double tinggi = scanner.nextDouble();
 
         Segitiga<Double> segitiga = new Segitiga<>(alas, tinggi);
-
+        System.out.println("Program operasi segitiga");
+        System.out.println("========================");
         System.out.println("Pilih salah satu operasi:");
-        System.out.println("1. Hitung luas");
-        System.out.println("2. Hitung keliling");
-        System.out.println("3. Hitung luas piramida");
-        System.out.println("4. Hitung volume piramida");
+        System.out.println("1. Hitung luas dan keliling segitiga");
+        System.out.println("2. Hitung luas dan volume limas segiempat");
+        System.out.println("3. Hitung luas dan volume limas segitiga");
 
         int pilihan = scanner.nextInt();
 
@@ -25,26 +25,30 @@ public class Main2 {
             case 1:
                 System.out.println("Luas segitiga (double) = " + segitiga.getResultAsDouble());
                 System.out.println("Luas segitiga (integer) = " + segitiga.getResultAsInt());
-                break;
-            case 2:
-                // There is no concept of perimeter in a triangle, perhaps you meant to say "Keliling"
                 double keliling = alas + tinggi + Math.sqrt(Math.pow(alas, 2) + Math.pow(tinggi, 2));
                 System.out.println("Keliling segitiga (double) = " + keliling);
                 System.out.println("Keliling segitiga (integer) = " + (int) keliling);
                 break;
-            case 3:
-                System.out.print("Masukkan tinggi piramida: ");
+            case 2:
+                System.out.print("Masukkan tinggi limas: ");
                 double tinggiPiramida = scanner.nextDouble();
-                double luasPiramida = segitiga.getResultAsDouble() * tinggiPiramida / 3;
-                System.out.println("Luas piramida (double) = " + luasPiramida);
-                System.out.println("Luas piramida (integer) = " + (int) luasPiramida);
-                break;
-            case 4:
-                System.out.print("Masukkan tinggi piramida: ");
                 tinggiPiramida = scanner.nextDouble();
+                double luasPiramida = segitiga.getResultAsDouble() * tinggiPiramida / 3;
+                System.out.println("Luas limas segiempat (double) = " + luasPiramida);
+                System.out.println("Luas limas segiempat (integer) = " + (int) luasPiramida);
                 double volumePiramida = segitiga.getResultAsDouble() * tinggiPiramida / 3;
-                System.out.println("Volume piramida (double) = " + volumePiramida);
-                System.out.println("Volume piramida (integer) = " + (int) volumePiramida);
+                System.out.println("Volume limaas segiempat (double) = " + volumePiramida);
+                System.out.println("Volume limas segiempat (integer) = " + (int) volumePiramida);
+                break;
+            case 3:
+                System.out.print("Masukkan tinggi limas: ");
+                double tinggiLimas = scanner.nextDouble();
+                double luasLimas = segitiga.getResultAsDouble() * tinggiLimas / 3;
+                System.out.println("Luas limas segitiga (double) = " + luasLimas);
+                System.out.println("Luas limas segitiga (integer) = " + (int) luasLimas);
+                double volumeLimas = segitiga.getResultAsDouble() * tinggiLimas / 3;
+                System.out.println("Volume limas segitiga (double) = " + volumeLimas);
+                System.out.println("Volume limas segitiga (integer) = " + (int) volumeLimas);
                 break;
             default:
                 System.out.println("Pilihan tidak valid.");

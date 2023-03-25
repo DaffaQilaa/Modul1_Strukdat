@@ -2,7 +2,7 @@ package Modul1Latihan;
 
 import java.util.ArrayList;
 
-public class Main {
+public class Main1 {
     public static void main(String[] args) {
         ArrayList<Konsumsi> listKonsumsi = new ArrayList<>();
         Konsumsi<Makanan, Minuman> sarapan = new Konsumsi<>();
